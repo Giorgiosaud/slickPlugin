@@ -1,0 +1,15 @@
+{
+    "name": "giorgiosaud/slickwp",
+    "authors": [
+        {
+            "name": "Jorge Saud",
+            "email": "jorgelsaud@gmail.com"
+        }
+    ],
+    "autoload":{
+    	"psr-4":{
+    		"giorgiosaud\\slickwp":"src/"
+    	}
+    },
+    "require": {}
+}
