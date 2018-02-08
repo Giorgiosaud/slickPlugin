@@ -1,5 +1,5 @@
 <?php
-namespace giorgiosaud\\slickwp;
+namespace giorgiosaud\slickwp;
 
 class Options
 {
