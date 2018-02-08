@@ -21,7 +21,7 @@ if (!defined('SLICKWP_BASE_URL')) {
 require_once 'vendor/autoload.php';
 function slickPlugin()
 {
-    return \giorgiosaud\\slickwp\Initializers::instance();
+    return \giorgiosaud\slickwp\Initializers::instance();
 }
 
 $GLOBALS['slickwp'] = slickPlugin();
