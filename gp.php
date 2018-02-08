@@ -21,7 +21,6 @@ set_exception_handler(function($e) {
 	echo "Error on line {$e->getLine()}: " . htmlSpecialChars($e->getMessage());
 	die();
 });
-echo $hookSecret;
 $rawPost = NULL;
 if ($hookSecret !== NULL) {
 	if (!isset($_SERVER['HTTP_X_HUB_SIGNATURE'])) {
