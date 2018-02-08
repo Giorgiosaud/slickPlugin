@@ -8,7 +8,7 @@
     ],
     "autoload":{
     	"psr-4":{
-    		"giorgiosaud\\slickwp":"src/"
+    		"giorgiosaud\\slickwp\\":"src/"
     	}
     },
     "require": {}
