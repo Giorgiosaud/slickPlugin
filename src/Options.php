@@ -23,24 +23,24 @@ class Options
     public function addPluginPage()
     {
         add_menu_page(
-            'Agro Theme Settings',
-            'AgroTheme',
+            'Slick Settings',
+            'Slick',
             'manage_options',
-            'agro_theme',
+            'slick_wp_plugin',
             array( $this, 'createAdminPage' )
         );
         add_submenu_page(
-            'agro_theme',
-            'Agro Theme Settings',
-            'Agro Theme Main Settings',
+            'slick_wp_plugin',
+            'Slick Wp Settings',
+            'Slick Wp Main Settings',
             'manage_options',
-            'agro_theme',
+            'slick_wp_plugin',
             array( $this, 'createAdminPage' )
         );
         add_submenu_page(
-            'agro_theme',
-            'Agro Theme Webhook Settings',
-            'Agro Theme Webhook Setup',
+            'slick_wp_plugin',
+            'Slick Wp Webhook Settings',
+            'Slick Wp Webhook Setup',
             'manage_options',
             'giorgioplugin_webhook',
             array( $this, 'createWebhookAdminPage' )
@@ -53,15 +53,15 @@ class Options
     public function createAdminPage()
     {
         // Set class property
-        $this->options = get_option('agro_theme');
+        $this->options = get_option('slick_wp_plugin');
         ?>
         <div class="wrap">
             <h1>My Settings</h1>
             <form method="post" action="options.php">
                 <?php
                 // This prints out all hidden setting fields
-                settings_fields('agro_theme_settings');
-                do_settings_sections('agro_theme');
+                settings_fields('slick_wp_plugin_settings');
+                do_settings_sections('slick_wp_plugin');
                 submit_button();
                 ?>
             </form>
@@ -74,15 +74,15 @@ class Options
     public function createWebhookAdminPage()
     {
         // Set class property
-        $this->options = get_option('agro_theme');
+        $this->options = get_option('slick_wp_plugin');
         ?>
         <div class="wrap">
             <h1>My Settings</h1>
             <form method="post" action="options.php">
                 <?php
                 // This prints out all hidden setting fields
-                settings_fields('agro_theme_settings');
-                do_settings_sections('agro_theme_webhook');
+                settings_fields('slick_wp_plugin_settings');
+                do_settings_sections('slick_wp_plugin_webhook');
                 submit_button();
                 ?>
             </form>
@@ -96,23 +96,23 @@ class Options
     public function pageInit()
     {
         register_setting(
-            'agro_theme_settings', // Option group
-            'agro_theme', // Option name
+            'slick_wp_plugin_settings', // Option group
+            'slick_wp_plugin', // Option name
             array( $this, 'sanitize' ) // Sanitize
         );
 
         add_settings_section(
-            'agro_theme_main_setting', // ID
+            'slick_wp_plugin_main_setting', // ID
             'Giorgio Plugin My Webhook Settings', // pass
             array( $this, 'printSectionInfo' ), // Callback
-            'agro_theme_webhook' // Page
+            'slick_wp_plugin_webhook' // Page
         );
         add_settings_field(
             'secret',
             'Secret',
             array( $this, 'passCallback' ),
-            'agro_theme_webhook',
-            'agro_theme_main_setting'
+            'slick_wp_plugin_webhook',
+            'slick_wp_plugin_main_setting'
         );
     }
 
@@ -139,7 +139,7 @@ class Options
      */
     public function printSectionInfo()
     {
-        _e('Enter your Webhook Settings below:', 'agro_theme');
+        _e('Enter your Webhook Settings below:', 'slick_wp_plugin');
     }
 
     /**
@@ -159,7 +159,7 @@ class Options
     public function passCallback()
     {
         printf(
-            '<input type="text" id="secret" name="agro_theme[secret]" value="%s" />',
+            '<input type="text" id="secret" name="slick_wp_plugin[secret]" value="%s" />',
             isset($this->options['secret']) ? esc_attr($this->options['secret']) : ''
         );
     }
