@@ -3,6 +3,8 @@ namespace giorgiosaud\slickwp;
 
 class Initializers
 {
+	protected static $_instance = null;
+	public $version="1.0";
 	public static function instance()
 	{
 		if (is_null(self::$_instance)) {
