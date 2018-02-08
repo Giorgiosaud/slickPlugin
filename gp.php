@@ -9,7 +9,7 @@ if (file_exists($path . '/wp-load.php')) {
 } elseif (file_exists($path . '/../wp-load.php')) {
 	include_once $path . '/../wp-load.php';
 }
-$options=get_option('slickWP');
+$options=get_option('slick_wp_plugin');
 $hookSecret =$options['secret'];
 
 set_error_handler(function($severity, $message, $file, $line) {
@@ -21,7 +21,7 @@ set_exception_handler(function($e) {
 	echo "Error on line {$e->getLine()}: " . htmlSpecialChars($e->getMessage());
 	die();
 });
-
+echo $hookSecret;
 $rawPost = NULL;
 if ($hookSecret !== NULL) {
 	if (!isset($_SERVER['HTTP_X_HUB_SIGNATURE'])) {
