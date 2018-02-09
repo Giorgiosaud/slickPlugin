@@ -21,7 +21,7 @@ class slickShortcode extends Singleton{
 		
 		return $this->view;
 	}
-	protected prepareView(){
+	protected function prepareView(){
 		$html='<div class="carousel">';
 		foreach ($this->posts as $post) {
 			$html.='<div class="slide">';
