@@ -23,7 +23,7 @@ function slickPlugin()
 {
     return \giorgiosaud\slickwp\Initializers::instance();
 }
-add_action( 'wp_enqueue_scripts', array('loadstyles') );
+add_action( 'wp_enqueue_scripts', 'loadstyles' );
 function loadstyles(){
 		wp_register_style( 'slickWpGs', plugins_url( '/slick/slick/slick.css', __FILE__ ), array('jquery'), '1.8.0', 'all' );
 		wp_enqueue_style( 'slickWpGs');
