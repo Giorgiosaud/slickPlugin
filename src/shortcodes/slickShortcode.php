@@ -151,7 +151,7 @@ class slickShortcode extends Singleton{
 		while ($query->have_posts() ) : $query->the_post();
 			$post=array();
 			$post['title']=get_the_title();
-			$post['image']= wp_get_attachment_image( get_post_meta( get_the_ID(), 'image_carousel', 1 ), 'carousel' );
+			$post['image']= get_post_meta( get_the_ID(), 'image_carousel', 1 );
 			$post['short_description'] = get_post_meta( get_the_ID(), 'short_description', true );
 
 			array_push($this->posts,$post);
