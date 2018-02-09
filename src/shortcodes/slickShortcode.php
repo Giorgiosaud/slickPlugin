@@ -173,7 +173,7 @@ class slickShortcode extends Singleton{
 				// 'update_post_meta_cache' => true,
 		
 			);
-		
+		var_dump($args);
 		$query = new \WP_Query( $args );
 		while ($query->have_posts() ) : $query->the_post();
 			$post=array();
