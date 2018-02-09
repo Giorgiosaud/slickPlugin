@@ -45,8 +45,8 @@ class slickShortcode extends Singleton{
 
 		}
 		$html.='</div>';
-		$html.='<script >'
-		$html.='</script>'
+		$html.='<script >';
+		$html.='</script>';
 		$this->view=$html;
 		// return;
 	}
