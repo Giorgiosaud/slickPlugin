@@ -1,6 +1,7 @@
 <?php
 namespace giorgiosaud\slickwp;
 
+
 class StylesAndScripts{
 	public function __construct()
 	{
