@@ -1,7 +1,7 @@
 <?php 
 namespace giorgiosaud\slickwp\shortcodes;
 use giorgiosaud\slickwp\Singleton;
-class slickShortcode{
+class slickShortcode extends Singleton{
 	public function __construct()
 	{
 		add_shortcode('slickwp',array($this,'execute'));
