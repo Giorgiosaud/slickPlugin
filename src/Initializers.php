@@ -21,7 +21,7 @@ class Initializers extends Singleton
     }
 	public function __construct()
 	{
-        die(var_dump('kdmclsm'));
+        // die(var_dump('kdmclsm'));
 		$this->defineConstants();
         
 		$this->initHooks();
