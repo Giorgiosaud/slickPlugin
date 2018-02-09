@@ -45,7 +45,8 @@ class Initializers
      * Initialize Hooks
      */
     private function initHooks()
-    {
+    {	
+    	new slickShortcode();
     	
         // register_activation_hook( WEDCONTEST_PLUGIN_FILE, array( Install::class, 'install' ) );
         // new \Zonapro\WedContest\Capabilities\Initialize();

@@ -64,7 +64,7 @@ $payload = json_decode($json);
 
 switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
 	case 'ping':
-	echo 'pong';
+	echo 'working!! pong!!';
 	break;
 
 	case 'push':
