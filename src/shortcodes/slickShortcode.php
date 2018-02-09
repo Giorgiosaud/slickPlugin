@@ -6,7 +6,7 @@ class slickShortcode{
 		add_shortcode('slickwp',array($this,'show'));
 	}
 	public function show(){
-		echo '<p>slickwp</p>';
+		return '<p>slickwp</p>';
 	}
 }
 
