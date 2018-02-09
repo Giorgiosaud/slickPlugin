@@ -1,0 +1,29 @@
+.carousel_container {
+    position: relative;
+    text-align: left;
+}
+
+.carousel_image {}
+
+.carousel_text {
+    position: absolute;
+    bottom: 1rem;
+    color: white;
+    left: 1rem;
+    width: 100%;
+}
+
+.carousel_subTitle {
+    font-size: 0.8rem;
+    font-weight: lighter;
+}
+
+.carousel_title {
+    font-weight: bold;
+    font-size: 2rem;
+    max-width: 50%;
+}
+
+.carousel_slide {
+    text-align: center;
+}
