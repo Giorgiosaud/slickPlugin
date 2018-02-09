@@ -10,8 +10,9 @@ class slickShortcode extends Singleton{
 	public function execute($atts){
 		$atts = shortcode_atts(
 			array(
-				'post_type' => 'post',
-				'category' => 'all',
+				'post_type' => 'paquetes',
+				'category' => 'activo',
+				'qty'=>'10'
 			), $atts, 'slickwp' );
 		$this->getPosts($atts);
 		var_dump($this->posts);
