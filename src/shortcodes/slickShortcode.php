@@ -3,6 +3,7 @@ namespace giorgiosaud\slickwp\shortcodes;
 use giorgiosaud\slickwp\Singleton;
 class slickShortcode extends Singleton{
 	protected $posts=array();
+	protected $view;
 	public function __construct()
 	{
 		add_shortcode('slickwp',array($this,'execute'));
@@ -15,8 +16,33 @@ class slickShortcode extends Singleton{
 				'qty'=>'10'
 			), $atts, 'slickwp' );
 		$this->getPosts($atts);
-		var_dump($this->posts);
-	return 'atts: ' . $atts['post_type'] . ' ' . $atts['category'];
+		$this->prepareView();
+
+		
+		return $this->view;
+	}
+	protected prepareView(){
+		$html='<div class="carousel">';
+		foreach ($this->posts as $post) {
+			$html.='<div class="slide">';
+				$html.='<div class="carousel_container">';
+						$html.='<div class="carousel_image">';
+							$html.=$post['image'];
+						$html.='</div>';
+						$html.='<div class="carousel_text">';
+							$html.='<div class="carousel_title">';
+								$html.=$post['title'];
+							$html.='</div>';
+							$html.='<div class="carousel_subTitle">';
+								$html.=$post['short_description'];
+							$html.='</div>';
+						$html.='</div>';
+				$html.='</div>';
+			$html.='</div>';
+		}
+		$html.='</div>';
+		$this->view=$html;
+		// return;
 	}
 	protected function getPosts($atts){
 			/*
