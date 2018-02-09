@@ -12,12 +12,6 @@ Text Domain:  wporg
 Domain Path:  /languages
 */
 
-function myplugin_scripts() {
-    wp_register_style( 'foo-styles',  plugin_dir_url( __FILE__ ) . 'assets/foo-styles.css' );
-    wp_enqueue_style( 'foo-styles' );
-}
-add_action( 'wp_enqueue_scripts', 'myplugin_scripts' );
-
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 if (!defined('SLICKWP_FILE')) {
     define('SLICKWP_FILE', __FILE__);

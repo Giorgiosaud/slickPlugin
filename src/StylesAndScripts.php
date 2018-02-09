@@ -4,12 +4,12 @@ namespace giorgiosaud\slickwp;
 class StylesAndScripts{
 	public function __construct()
 	{
-		add_action( 'wp_enqueue_scripts', array($this,'styles') );
+	add_action( 'wp_enqueue_scripts', array($this,'slickwp_scripts' ));
 	}
-	public function styles(){
-		die(var_dump('help'));
-		wp_register_style( 'slickWpGs', plugins_url( '/slick/slick/slick.css', __FILE__ ), array('jquery'), '1.8.0', 'all' );
-		wp_enqueue_style( 'slickWpGs');
+	public function slickwp_scripts(){
+		    wp_register_style( 'foo-styles',  plugin_dir_url( __FILE__ ) . 'assets/foo-styles.css' );
+    wp_enqueue_style( 'foo-styles' );
+
 
 	}
 }
