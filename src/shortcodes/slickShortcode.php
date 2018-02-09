@@ -10,7 +10,7 @@ class slickShortcode extends Singleton{
 		$atts = shortcode_atts(
 			array(
 				'post_type' => 'post',
-				'category' => '',
+				'category' => 'all',
 			), $atts, 'slickwp' );
 
 	return 'atts: ' . $atts['post_type'] . ' ' . $atts['category'];
