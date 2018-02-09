@@ -1,6 +1,8 @@
 <?php
 namespace giorgiosaud\slickwp;
 
+use giorgiosaud\slickwp\shortcodes\slickShortcode;
+
 class Initializers
 {
 	protected static $_instance = null;
