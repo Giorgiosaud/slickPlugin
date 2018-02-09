@@ -5,7 +5,7 @@ class Singleton{
 	public static function instance()
 	{
 		if (is_null(self::$_instance)) {
-			self::$_instance = new self();
+			parent::$_instance = new parent();
 		}
 		return self::$_instance;
 	}
