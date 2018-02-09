@@ -28,7 +28,7 @@ if (!defined('SLICKWP_FILE')) {
 if (!defined('SLICKWP_BASE_URL')) {
     define('SLICKWP_BASE_URL', plugin_dir_url(__FILE__));
 }
-die(var_dump('kdmclsm'));
+
 require_once 'vendor/autoload.php';
 function slickPlugin()
 {
