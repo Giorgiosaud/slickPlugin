@@ -39,6 +39,8 @@ class slickShortcode extends Singleton{
 							$html.='</div>';
 						$html.='</div>';
 				$html.='</div>';
+				$ref=$post['link'];
+				$html.="<a class='fusion-button button-flat fusion-button-round button-large button-custom button-1 buttonRoundedFlat' href='$ref' target='_self'><span class='fusion-button-text'>Ver más</span></a>";
 			$html.='</div>';
 		}
 		$html.='</div>';
