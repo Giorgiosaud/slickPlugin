@@ -27,7 +27,6 @@ class Initializers extends Singleton
 		if (is_admin()) {
 			$my_settings_page = new Options();
 		}
-        wp_register_style( 'slickWpGs', plugins_url( '/slick/slick/slick.css', __FILE__ ) );
 		do_action('giorgioslickplugin_loaded');
 	}
 	private function defineConstants()
@@ -43,5 +42,6 @@ class Initializers extends Singleton
     private function initHooks()
     {	
     	$sc=slickShortcode::instance();;
+    	new StylesAndScripts::instance();
     }
 }
