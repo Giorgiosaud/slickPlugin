@@ -32,6 +32,7 @@ if (!defined('SLICKWP_BASE_URL')) {
 require_once 'vendor/autoload.php';
 function slickPlugin()
 {
+	die(var_dump('kdmclsm'));
     return \giorgiosaud\slickwp\Initializers::instance();
 }
 $GLOBALS['slickwp'] = slickPlugin();
