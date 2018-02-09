@@ -46,6 +46,11 @@ class slickShortcode extends Singleton{
 		}
 		$html.='</div>';
 		$html.='<script >';
+		$html.='jQuery(document).ready(function($) {';
+
+		$html.="$('#$id').slick({infinite:true,dots:false});";
+	
+		$html.='});';
 		$html.='</script>';
 		$this->view=$html;
 		// return;
