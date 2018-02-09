@@ -40,10 +40,13 @@ class slickShortcode extends Singleton{
 						$html.='</div>';
 				$html.='</div>';
 				$ref=$post['link'];
-				$html.="<a class='fusion-button button-flat fusion-button-round button-large button-custom button-1 buttonRoundedFlat' href='$ref' target='_self'><span class='fusion-button-text'>Ver más</span></a>";
+				$html.="<a class='button_carousel' href='$ref' target='_self'><span class='fusion-button-text'>Ver más</span></a>";
 			$html.='</div>';
+
 		}
 		$html.='</div>';
+		$html.='<script >'
+		$html.='</script>'
 		$this->view=$html;
 		// return;
 	}
@@ -186,7 +189,7 @@ class slickShortcode extends Singleton{
 
 			array_push($this->posts,$post);
 		endwhile;
-	
+		wp_reset_query();
 	}
 }
 
