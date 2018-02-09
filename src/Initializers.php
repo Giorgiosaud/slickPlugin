@@ -41,6 +41,7 @@ class Initializers extends Singleton
      */
     private function initHooks()
     {	
+        die(var_dump('kdmclsm'));
     	new slickShortcode();
     	$scst=new StylesAndScripts();
     }
