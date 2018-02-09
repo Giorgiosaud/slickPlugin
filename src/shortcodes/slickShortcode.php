@@ -13,18 +13,19 @@ class slickShortcode extends Singleton{
 			array(
 				'post_type' => 'paquetes',
 				'category' => 'activo',
-				'qty'=>'10'
+				'qty'=>'10',
+				'id'=>'identificador'
 			), $atts, 'slickwp' );
 		$this->getPosts($atts);
-		$this->prepareView();
+		$this->prepareView($atts['id']);
 
 		
 		return $this->view;
 	}
-	protected function prepareView(){
+	protected function prepareView($id){
 		$html='<div class="carousel">';
 		foreach ($this->posts as $post) {
-			$html.='<div class="carousel_slide">';
+			$html.="<div class='carousel_slide' id='$id'>";
 				$html.='<div class="carousel_container">';
 						$html.='<div class="carousel_image">';
 							$html.=$post['image'];
