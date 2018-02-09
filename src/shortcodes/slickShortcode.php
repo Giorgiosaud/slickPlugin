@@ -17,13 +17,13 @@ class slickShortcode extends Singleton{
 				'id'=>'identificador'
 			), $atts, 'slickwp' );
 		$this->getPosts($atts);
-		$this->prepareView($atts['id']);
+		$this->prepareView($atts['id'],$atts['category']);
 
 		
 		return $this->view;
 	}
-	protected function prepareView($id){
-		$html="<div class='carousel'  id='$id'>";
+	protected function prepareView($id,$cat){
+		$html="<div class='carousel $cat'  id='$id'>";
 		foreach ($this->posts as $post) {
 			$html.='<div class="carousel_slide">';
 				$html.='<div class="carousel_container">';
