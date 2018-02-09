@@ -180,6 +180,7 @@ class slickShortcode extends Singleton{
 			$post['title']=get_the_title();
 			$post['image']= wp_get_attachment_image( get_post_meta( get_the_ID(), 'image_carousel_id', 1 ), 'carousel' );
 			$post['short_description'] = get_post_meta( get_the_ID(), 'short_description', true );
+			$post['link']=get_permalink( get_the_ID() );
 
 			array_push($this->posts,$post);
 		endwhile;
