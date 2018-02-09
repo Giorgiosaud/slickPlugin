@@ -1,6 +1,7 @@
 <?php
 namespace giorgiosaud\slickwp;
 
+use giorgiosaud\slickwp\StylesAndScripts;
 use giorgiosaud\slickwp\shortcodes\slickShortcode;
 
 class Initializers extends Singleton
