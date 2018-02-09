@@ -48,7 +48,7 @@ class slickShortcode extends Singleton{
 		$html.='<script >';
 		$html.='jQuery(document).ready(function($) {';
 
-		$html.="$('#$id').slick({infinite:true,dots:false,prevArrow:\"<button type='button' class='slickwp-prev'>Previous</button>\"});";
+		$html.="$('#$id').slick({infinite:true,dots:false,prevArrow:\"<button type='button' class='slickwp-prev'>Previous</button>\",nextArrow:\"<button type='button' class='slickwp-next'>Next</button>\"});";
 	
 		$html.='});';
 		$html.='</script>';
