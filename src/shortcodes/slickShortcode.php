@@ -4,10 +4,16 @@ use giorgiosaud\slickwp\Singleton;
 class slickShortcode extends Singleton{
 	public function __construct()
 	{
-		add_shortcode('slickwp',array($this,'show'));
+		add_shortcode('slickwp',array($this,'execute'));
 	}
-	public function show(){
-		return '<p>slickwp</p>';
+	public function execute($atts){
+		$atts = shortcode_atts(
+			array(
+				'post_type' => 'post',
+				'category' => '',
+			), $atts, 'slickwp' );
+
+	return 'atts: ' . $atts['post_type'] . ' ' . $atts['category'];
 	}
 }
 
