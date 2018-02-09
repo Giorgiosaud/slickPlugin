@@ -1,7 +1,7 @@
 <?php
 namespace giorgiosaud\slickwp;
 class Singleton{
-	private static $_instance = null;
+	protected static $_instance = null;
 	public static function instance()
 	{
 		if (is_null(self::$_instance)) {
