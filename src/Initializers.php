@@ -21,7 +21,7 @@ class Initializers extends Singleton
     }
 	public function __construct()
 	{
-        die(var_dump('kdmclsm'));
+
 		$this->defineConstants();
         
 		$this->initHooks();
@@ -43,7 +43,7 @@ class Initializers extends Singleton
     private function initHooks()
     {	
 
-    	new slickShortcode();
-    	$scst=new StylesAndScripts();
+    	slickShortcode::getInstance();
+    	StylesAndScripts::getInstance();
     }
 }
