@@ -41,6 +41,6 @@ class Initializers extends Singleton
     private function initHooks()
     {	
     	$sc=slickShortcode::instance();;
-    	$styl=Styles::instance();
+    	$styl=StylesAndScripts::instance();
     }
 }
