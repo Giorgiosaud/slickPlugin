@@ -16,7 +16,7 @@ if (!defined('SLICKWP_FILE')) {
     define('SLICKWP_FILE', __FILE__);
 }
 if (!defined('SLICKWP_BASE_URL')) {
-    define('SLICKWP_BASE_URL', plugin_dir_url(__FILE__));
+    define('SLICKWP_BASE_URL', plugin_dir_url( __FILE__ ));
 }
 
 require_once 'vendor/autoload.php';
