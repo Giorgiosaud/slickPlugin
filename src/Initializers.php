@@ -22,7 +22,7 @@ class Initializers extends Singleton
 	public function __construct()
 	{
 		$this->defineConstants();
-        die(var_dump('kdmclsm'));
+        
 		$this->initHooks();
 		if (is_admin()) {
 			$my_settings_page = new Options();
