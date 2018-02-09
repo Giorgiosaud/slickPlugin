@@ -1,8 +1,7 @@
 <?php
 namespace giorgiosaud\slickwp;
-use giorgiosaud\slickwp\Singleton;
 
-class StylesAndScripts extends Singleton{
+class StylesAndScripts{
 	public function __construct()
 	{
 		die(var_dump('expression'));
