@@ -11,7 +11,7 @@ class CMB2Fields extends Singleton{
 
 	public function paquetes_aditionals_fields() {
 		$cmb = new_cmb2_box( array(
-			'id'            => CMB2PREFIX . 'metabox',
+			'id'            => SLICKWP_CMB2PREFIX . 'metabox',
 			'title'         => esc_html__( 'Datos Para Carousel', 'Avada' ),
 		'object_types'  => array( 'paquetes' ), // Post type
 // 		// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
@@ -26,13 +26,13 @@ class CMB2Fields extends Singleton{
 		$cmb->add_field( array(
 			'name'       => esc_html__( 'Short Description', 'Avada' ),
 			'desc'       => esc_html__( 'Short description to show in Carousel', 'Avada' ),
-			'id'         => 'short_description',
+			'id'         => SLICKWP_CMB2PREFIX.'short_description',
 			'type'       => 'textarea_small',
 		) );
 		$cmb->add_field(array(
 			'name'=> esc_html__('Image For Carousel','Avada'),
 			'desc'=> esc_html__('Image For Carousel in home or other pages','Avada'),
-			'id'         => 'image_carousel',
+			'id'         => SLICKWP_CMB2PREFIX.'image_carousel',
 			'type'       => 'file',
 		// Optional:
 			'options' => array(
