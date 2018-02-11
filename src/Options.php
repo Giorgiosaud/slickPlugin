@@ -54,7 +54,7 @@ class Options
     public function createWebhookAdminPage()
     {
         // Set class property
-        $this->options = get_option('slick_wp_plugin_webhook');
+        $this->options = get_option('slick_wp_plugin');
         ?>
         <div class="wrap">
             <h1>My Webhook Settings</h1>
@@ -97,7 +97,7 @@ class Options
         register_setting(
             'slick_wp_plugin_general_settings', // Option group
             'slick_wp_plugin', // Option name
-            array( $this, 'sanitize' ) // Sanitize
+            array( $this, 'sanitize_general_settings' ) // Sanitize
         );
         add_settings_section(
             'slick_wp_plugin_general_settings', // ID
@@ -130,6 +130,9 @@ class Options
         }
 
         return $new_input;
+    }
+    public function sanitize_general_settings(){
+        die(var_dump('expression'))
     }
 
     /** 
@@ -196,7 +199,7 @@ class Options
     public function createAdminPage()
     {
         // Set class property
-        $this->options = get_option('slick_wp_plugin_webhook');
+        $this->options = get_option('slick_wp_plugin');
         ?>
         <div class="wrap">
             <h1>My Settings</h1>
