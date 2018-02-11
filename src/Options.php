@@ -47,7 +47,6 @@ class Options
             'slick_wp_plugin_webhook',// menu slug
             array( $this, 'createWebhookAdminPage' ) // Callable
         );
-        // This page will be under "Settings"
     }
     /**
      * Options page callback
@@ -95,6 +94,17 @@ class Options
             'slick_wp_plugin_webhook', //Page
             'slick_wp_plugin_webhook_settings' //Section
         );
+        register_setting(
+            'slick_wp_plugin_general_settings', // Option group
+            'slick_wp_plugin', // Option name
+            array( $this, 'sanitize_general_settings' ) // Sanitize
+        );
+        add_settings_section(
+            'slick_wp_plugin_general_settings', // ID
+            'Slick Settings', // Title
+            array( $this, 'printSectionSlick' ), // Callback
+            'slick_wp_plugin_general' // Page
+        );
     }
 
     /**
@@ -122,6 +132,13 @@ class Options
     {
         _e('Enter your Webhook Settings below:', 'slick_wp_plugin');
     }
+    /** 
+     * Print the Section text
+     */
+    public function printSectionSlick()
+    {
+        _e('Enter your Slick Settings below:', 'slick_wp_plugin');
+    }
 
     /**
      * Get the settings option array and print one of its values
@@ -143,5 +160,26 @@ class Options
             '<input type="text" id="secret" name="slick_wp_plugin[secret]" value="%s" />',
             isset($this->options['secret']) ? esc_attr($this->options['secret']) : ''
         );
+    }
+    /**
+     * Options page callback
+     */
+    public function createAdminPage()
+    {
+        // Set class property
+        $this->options = get_option('slick_wp_plugin');
+        ?>
+        <div class="wrap">
+            <h1>My Settings</h1>
+            <form method="post" action="options.php">
+                <?php
+                // This prints out all hidden setting fields
+                settings_fields('slick_wp_plugin_general_settings');
+                do_settings_sections('slick_wp_plugin');
+                submit_button();
+                ?>
+            </form>
+        </div>
+    <?php
     }
 }
