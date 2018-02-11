@@ -131,8 +131,8 @@ class Options
 
         return $new_input;
     }
-    public function sanitize_general_settings(){
-        die(var_dump('expression'));
+    public function sanitize_general_settings($input){
+        die(var_dump($input));
     }
 
     /** 
