@@ -193,10 +193,6 @@ class Options
         printf('<option value="%s" %s>%s</option>',$post_type->name,$selected,$post_type->name);
         }
         echo '</select>';
-        printf(
-            '<input type="text" id="custom_posts" name="slick_wp_plugin[custom_posts]" value="%s" />',
-            isset($this->options['custom_posts']) ? esc_attr($this->options['custom_posts']) : ''
-        );
 
     }
     /**
