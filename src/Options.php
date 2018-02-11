@@ -138,7 +138,7 @@ class Options
             $selected_posts=$input['custom_posts'];
         }
         var_dump($selected_posts);
-        return $selected_posts
+        return $selected_posts;
     }
 
     /** 
