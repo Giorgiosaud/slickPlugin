@@ -132,9 +132,13 @@ class Options
         return $new_input;
     }
     public function sanitize_general_settings($input){
-        var_dump($input)
-        return $input;
 
+     
+        if (isset($input['secret'])) {
+            $new_input['secret'] = sanitize_text_field($input['secret']);
+        }
+
+        return $new_input;
     }
 
     /** 
