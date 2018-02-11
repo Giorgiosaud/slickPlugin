@@ -28,12 +28,30 @@ class CMB2Fields extends Singleton{
 			'desc'       => esc_html__( 'Title to show in Carousel', 'slick_wp_plugin' ),
 			'id'         => SLICKWP_CMB2PREFIX.'big_title',
 			'type'       => 'wysiwyg',
+			'options' => array(
+		  	  'wpautop' => true, // use wpautop?
+			  'textarea_name' => $editor_id, // set the textarea name to something different, square brackets [] can be used here
+		      'textarea_rows' =>3, // rows="..."
+		      'tabindex' => '',
+		      'teeny' => false, // output the minimal editor config used in Press This
+		      'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
+		      'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()
+			),
 		) );
 		$cmb->add_field( array(
 			'name'       => esc_html__( 'Short Description', 'slick_wp_plugin' ),
 			'desc'       => esc_html__( 'Short description to show in Carousel', 'slick_wp_plugin' ),
 			'id'         => SLICKWP_CMB2PREFIX.'short_description',
 			'type'       => 'wysiwyg',
+			'options' => array(
+		  	  'wpautop' => true, // use wpautop?
+			  'textarea_name' => $editor_id, // set the textarea name to something different, square brackets [] can be used here
+		      'textarea_rows' =>2, // rows="..."
+		      'tabindex' => '',
+		      'teeny' => false, // output the minimal editor config used in Press This
+		      'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
+		      'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()
+			),
 		) );
 		
 		$cmb->add_field(array(
@@ -52,10 +70,10 @@ class CMB2Fields extends Singleton{
 			'query_args' => array(
 			// 'type' => 'application/pdf', // Make library only display PDFs.
 			// Or only allow gif, jpg, or png images
-			'type' => array(
-				'image/gif',
-				'image/jpeg',
-				'image/png',
+				'type' => array(
+					'image/gif',
+					'image/jpeg',
+					'image/png',
 				),
 			),
 			'preview_size' => 'slick_wp_carousel', // Image size to use when previewing in the admin.
