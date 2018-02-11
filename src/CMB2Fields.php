@@ -12,7 +12,7 @@ class CMB2Fields extends Singleton{
 	public function paquetes_aditionals_fields() {
 		$cmb = new_cmb2_box( array(
 			'id'            => SLICKWP_CMB2PREFIX . 'metabox',
-			'title'         => esc_html__( 'Datos Para Carousel', 'Avada' ),
+			'title'         => esc_html__( 'Datos Para Carousel', 'slick_wp_plugin' ),
 		'object_types'  => array( 'paquetes' ), // Post type
 // 		// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
 		'context'    => 'after_title',
@@ -24,14 +24,20 @@ class CMB2Fields extends Singleton{
 // 		// 'classes_cb' => 'yourprefix_add_some_classes', // Add classes through a callback.
 	) );	
 		$cmb->add_field( array(
-			'name'       => esc_html__( 'Short Description', 'Avada' ),
-			'desc'       => esc_html__( 'Short description to show in Carousel', 'Avada' ),
+			'name'       => esc_html__( 'Short Description', 'slick_wp_plugin' ),
+			'desc'       => esc_html__( 'Short description to show in Carousel', 'slick_wp_plugin' ),
 			'id'         => SLICKWP_CMB2PREFIX.'short_description',
 			'type'       => 'textarea_small',
 		) );
+		$cmb->add_field( array(
+			'name'       => esc_html__( 'Big Carousel Title', 'slick_wp_plugin' ),
+			'desc'       => esc_html__( 'Title to show in Carousel', 'slick_wp_plugin' ),
+			'id'         => SLICKWP_CMB2PREFIX.'big_title',
+			'type'       => 'textarea_small',
+		) );
 		$cmb->add_field(array(
-			'name'=> esc_html__('Image For Carousel','Avada'),
-			'desc'=> esc_html__('Image For Carousel in home or other pages','Avada'),
+			'name'=> esc_html__('Image For Carousel','slick_wp_plugin'),
+			'desc'=> esc_html__('Image For Carousel in home or other pages','slick_wp_plugin'),
 			'id'         => SLICKWP_CMB2PREFIX.'image_carousel',
 			'type'       => 'file',
 		// Optional:
