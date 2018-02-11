@@ -121,7 +121,6 @@ class Options
      */
     public function sanitize($input)
     {
-        
         $new_input = array();
         // if( isset( $input['id_number'] ) )
         //  $new_input['id_number'] = absint( $input['id_number'] );
@@ -133,14 +132,13 @@ class Options
         return $new_input;
     }
     public function sanitize_general_settings($input){
-
-        die(var_dump('sanitizing'));        
-        if (isset($input['custom_posts'])) {
-            $new_input=array();
-            $new_input['custom_posts']=$input['custom_posts'];
-        }
+        $selected_posts=array();
         
-        return $new_input;
+        if (isset($input['custom_posts'])) {
+            $selected_posts=$input['custom_posts'];
+        }
+        die(var_dump($selected_posts));
+        return $selected_posts;
     }
 
     /** 
@@ -186,14 +184,18 @@ class Options
         $output = 'objects'; // names or objects, note names is the default
         $operator = 'and'; // 'and' or 'or'
 
-        var_dump($this->options);
         $post_types = get_post_types( $args, $output, $operator ); 
-        echo '<select id="custom_posts" name="slick_wp_plugin[custom_posts][]" multiple>';
+        var_dump($this->options['custom_posts']);
+        echo '<select name="slick_wp_plugin[custom_posts]" multiple>';
         foreach ( $post_types as $post_type ) {
             $selected=in_array($this->options['custom_posts'],$post_type->name)?'selected':'';
-            printf('<option value="%s" %s>%s</option>',$post_type->name,$selected,$post_type->label);
+        printf('<option value="%s" %s>%s</option>',$post_type->name,$selected,$post_type->name);
         }
         echo '</select>';
+        printf(
+            '<input type="text" id="custom_posts" name="slick_wp_plugin[custom_posts]" value="%s" />',
+            isset($this->options['custom_posts']) ? esc_attr($this->options['custom_posts']) : ''
+        );
 
     }
     /**
