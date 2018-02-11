@@ -189,6 +189,7 @@ class Options
         var_dump($this->options['custom_posts']);
         echo '<select name="slick_wp_plugin[custom_posts]" multiple>';
         foreach ( $post_types as $post_type ) {
+            var_dump($post_type);
             $selected=in_array($this->options['custom_posts'],$post_type->name)?'selected':'';
         printf('<option value="%s" %s>%s</option>',$post_type->name,$selected,$post_type->name);
         }
