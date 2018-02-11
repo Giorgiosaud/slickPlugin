@@ -9,7 +9,7 @@ if (file_exists($path . '/wp-load.php')) {
 } elseif (file_exists($path . '/../wp-load.php')) {
 	include_once $path . '/../wp-load.php';
 }
-$options=get_option('slick_wp_plugin');
+$options=get_option('slick_wp_plugin_webhook');
 $hookSecret =$options['secret'];
 
 set_error_handler(function($severity, $message, $file, $line) {
