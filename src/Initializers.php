@@ -2,6 +2,7 @@
 namespace giorgiosaud\slickwp;
 
 use giorgiosaud\slickwp\shortcodes\slickShortcode;
+use giorgiosaud\slickwp\shortcodes\multiSlickShortcode;
 
 class Initializers extends Singleton
 {
