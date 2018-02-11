@@ -169,6 +169,9 @@ class Options
         );
     }
     public function askForPosts(){
+        foreach ( get_post_types( '', 'names' ) as $post_type ) {
+            echo '<p>' . $post_type . '</p>';
+        }
         printf(
             '<input type="text" id="custom_posts" name="slick_wp_plugin[custom_posts]" value="%s" />',
             isset($this->options['custom_posts']) ? esc_attr($this->options['custom_posts']) : ''
