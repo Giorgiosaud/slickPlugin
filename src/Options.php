@@ -54,7 +54,7 @@ class Options
     public function createWebhookAdminPage()
     {
         // Set class property
-        $this->options = get_option('slick_wp_plugin');
+        $this->options = get_option('slick_wp_plugin_webhook');
         ?>
         <div class="wrap">
             <h1>My Webhook Settings</h1>
@@ -96,7 +96,7 @@ class Options
         );
         register_setting(
             'slick_wp_plugin_general_settings', // Option group
-            'slick_wp_plugin', // Option name
+            'slick_wp_plugin_general', // Option name
             array( $this, 'sanitize_general_settings' ) // Sanitize
         );
         add_settings_section(
@@ -144,7 +144,7 @@ class Options
         );
     }
 
-    
+
     public function sanitize_general_settings(){
         die(var_dump('expression'));
     }
@@ -164,20 +164,6 @@ class Options
         _e('Enter your Slick Settings below:', 'slick_wp_plugin');
     }
 
-    /**
-     * Get the settings option array and print one of its values
-     */
-    // public function id_number_callback()
-    // {
-    //  printf(
-    //      '<input type="text" id="id_number" name="wedcontest[id_number]" value="%s" />',
-    //      isset( $this->options['id_number'] ) ? esc_attr( $this->options['id_number']) : ''
-    //  );
-    // }
-
-    /**
-     * Get the settings option array and print one of its values
-     */
     
     public function askForPosts(){
         $args = array(
@@ -188,7 +174,7 @@ class Options
 
         $post_types = get_post_types( $args, $output, $operator ); 
 
-        echo '<select name="slick_wp_plugin[custom_posts][]" multiple>';
+        echo '<select name="slick_wp_plugin_general[custom_posts][]" multiple>';
         foreach ( $post_types as $post_type ) {
             $selected=in_array($this->options['custom_posts'],$post_type->name)?'selected':'';
             var_dump($selected);
@@ -196,7 +182,7 @@ class Options
         }
         echo '</select>';
         printf(
-            '<input type="text" id="custom_posts" name="slick_wp_plugin[custom_posts]" value="%s" />',
+            '<input type="text" id="custom_posts" name="slick_wp_plugin_general[custom_posts]" value="%s" />',
             isset($this->options['custom_posts']) ? esc_attr($this->options['custom_posts']) : ''
         );
 
@@ -207,7 +193,7 @@ class Options
     public function createAdminPage()
     {
         // Set class property
-        $this->options = get_option('slick_wp_plugin');
+        $this->options = get_option('slick_wp_plugin_general');
         ?>
         <div class="wrap">
             <h1>My Settings</h1>
