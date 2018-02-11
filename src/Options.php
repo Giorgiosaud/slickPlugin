@@ -187,10 +187,13 @@ class Options
         printf('<option value="%s" %s>%s</option>',$post_type->name,$selected,$post_type->name);
         }
         echo '</select>';
+        foreach ($this->options['custom_posts'] as $custom_post) {
         printf(
             '<div> %s </div>',
-            isset($this->options['custom_posts']) ? esc_attr($this->options['custom_posts']) : ''
-        );
+            $custom_post
+        );    
+        }
+        
 
     }
     /**
