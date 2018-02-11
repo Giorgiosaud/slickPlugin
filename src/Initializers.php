@@ -36,7 +36,7 @@ class Initializers extends Singleton
 		$this->define('SLICKWP_ABSPATH', dirname(SLICKWP_FILE) . '/');
 		$this->define('SLICKWP_BASENAME', plugin_basename(SLICKWP_FILE));
 		$this->define('SLICKWP_VERSION', $this->version);
-        $this->defint('CMB2PREFIX','SLICKWP_');
+        $this->define('CMB2PREFIX','SLICKWP_');
 	}
     /**
      * Initialize Hooks
