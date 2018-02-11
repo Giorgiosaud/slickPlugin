@@ -54,7 +54,4 @@ class CMB2Fields extends Singleton{
 			'preview_size' => 'carousel', // Image size to use when previewing in the admin.
 		));
 	}
-	
-
-}
 }
