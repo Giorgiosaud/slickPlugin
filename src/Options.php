@@ -132,7 +132,9 @@ class Options
         return $new_input;
     }
     public function sanitize_general_settings($input){
-        die(var_dump($input));
+        var_dump($input)
+        return $input;
+
     }
 
     /** 
