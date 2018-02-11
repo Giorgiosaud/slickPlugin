@@ -99,6 +99,12 @@ class Options
             'slick_wp_plugin', // Option name
             array( $this, 'sanitize_general_settings' ) // Sanitize
         );
+        add_settings_section(
+            'slick_wp_plugin_general_settings', // ID
+            'Slick Settings', // Title
+            array( $this, 'printSectionSlick' ), // Callback
+            'slick_wp_plugin_general' // Page
+        );
     }
 
     /**
@@ -125,6 +131,13 @@ class Options
     public function printSectionInfo()
     {
         _e('Enter your Webhook Settings below:', 'slick_wp_plugin');
+    }
+    /** 
+     * Print the Section text
+     */
+    public function printSectionSlick()
+    {
+        _e('Enter your Slick Settings below:', 'slick_wp_plugin');
     }
 
     /**
@@ -161,8 +174,8 @@ class Options
             <form method="post" action="options.php">
                 <?php
                 // This prints out all hidden setting fields
-                settings_fields('slick_wp_plugin_settings');
-                do_settings_sections('slick_wp_plugin');
+                settings_fields('slick_wp_plugin_general_settings');
+                do_settings_sections('slick_wp_plugin_general');
                 submit_button();
                 ?>
             </form>
