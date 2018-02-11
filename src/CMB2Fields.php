@@ -24,17 +24,18 @@ class CMB2Fields extends Singleton{
 // 		// 'classes_cb' => 'yourprefix_add_some_classes', // Add classes through a callback.
 	) );	
 		$cmb->add_field( array(
-			'name'       => esc_html__( 'Short Description', 'slick_wp_plugin' ),
-			'desc'       => esc_html__( 'Short description to show in Carousel', 'slick_wp_plugin' ),
-			'id'         => SLICKWP_CMB2PREFIX.'short_description',
-			'type'       => 'textarea_small',
-		) );
-		$cmb->add_field( array(
 			'name'       => esc_html__( 'Big Carousel Title', 'slick_wp_plugin' ),
 			'desc'       => esc_html__( 'Title to show in Carousel', 'slick_wp_plugin' ),
 			'id'         => SLICKWP_CMB2PREFIX.'big_title',
-			'type'       => 'textarea_small',
+			'type'       => 'wysiwyg',
 		) );
+		$cmb->add_field( array(
+			'name'       => esc_html__( 'Short Description', 'slick_wp_plugin' ),
+			'desc'       => esc_html__( 'Short description to show in Carousel', 'slick_wp_plugin' ),
+			'id'         => SLICKWP_CMB2PREFIX.'short_description',
+			'type'       => 'wysiwyg',
+		) );
+		
 		$cmb->add_field(array(
 			'name'=> esc_html__('Image For Carousel','slick_wp_plugin'),
 			'desc'=> esc_html__('Image For Carousel in home or other pages','slick_wp_plugin'),
