@@ -4,7 +4,7 @@ namespace giorgiosaud\slickwp;
 class CMB2Fields extends Singleton{
 	public function __construct()
 	{
-		add_action( 'cmb2_admin_init', array($this'paquetes_aditionals_fields' ));
+		add_action( 'cmb2_admin_init', array($this,'paquetes_aditionals_fields' ));
 	}	
 	
 
