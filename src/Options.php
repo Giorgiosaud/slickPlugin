@@ -135,14 +135,11 @@ class Options
 
         die(var_dump($input));        
         if (isset($input['custom_posts'])) {
-            $selected_posts=array();
-
-            die(var_dump($input['custom_posts']));
-
-            $selected_posts=$input['custom_posts'];
+            $new_input=array();
+            $new_input['custom_posts']=$input['custom_posts'];
         }
         
-        return $selected_posts;
+        return $new_input;
     }
 
     /** 
