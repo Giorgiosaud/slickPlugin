@@ -1,7 +1,6 @@
 <?php
 namespace giorgiosaud\slickwp;
 
-use giorgiosaud\slickwp\StylesAndScripts;
 use giorgiosaud\slickwp\shortcodes\slickShortcode;
 
 class Initializers extends Singleton
@@ -43,7 +42,7 @@ class Initializers extends Singleton
      */
     private function initHooks()
     {	
-
+        ImageSizes::getInstance();
     	slickShortcode::getInstance();
     	StylesAndScripts::getInstance();
         CMB2Fields::getInstance();

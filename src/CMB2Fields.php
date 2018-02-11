@@ -51,7 +51,7 @@ class CMB2Fields extends Singleton{
 				'image/png',
 				),
 			),
-			'preview_size' => 'carousel', // Image size to use when previewing in the admin.
+			'preview_size' => 'slick_wp_carousel', // Image size to use when previewing in the admin.
 		));
 	}
 }
