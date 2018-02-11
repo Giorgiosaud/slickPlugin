@@ -144,13 +144,14 @@ class Options
 
 
     public function sanitize_general_settings($input){
-        var_dump('expression');
-        die(var_dump($input));
         $new_input = array();
         if (isset($input['custom_posts'])) {
-            $new_input['custom_posts'] = sanitize_text_field($input['custom_posts']);
+            $new_input['custom_posts']=array();
+            foreach ($input['custom_posts'] as $custom_post) {
+                $sanitized=sanitize_text_field($custom_post);
+                array_push($new_input['custom_posts'], $sanitized);
+            }
         }
-
         return $new_input;
     }
 
