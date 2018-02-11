@@ -32,7 +32,7 @@ class slickShortcode extends Singleton{
 						$html.='</div>';
 						$html.='<div class="carousel_text">';
 							$html.='<div class="carousel_title">';
-								$html.=$post['title'];
+								$html.=$post['big_title'];
 							$html.='</div>';
 							$html.='<div class="carousel_subTitle">';
 								$html.=$post['short_description'];
