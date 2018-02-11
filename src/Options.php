@@ -133,7 +133,7 @@ class Options
     }
     public function sanitize_general_settings($input){
 
-     
+        var_dump($input);
         if (isset($input['secret'])) {
             $new_input['secret'] = sanitize_text_field($input['secret']);
         }
