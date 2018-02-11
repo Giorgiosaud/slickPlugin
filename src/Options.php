@@ -133,7 +133,7 @@ class Options
     }
     public function sanitize_general_settings($input){
 
-        
+        die(var_dump($input));        
         if (isset($input['custom_posts'])) {
             $selected_posts=array();
 
