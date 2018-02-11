@@ -132,10 +132,13 @@ class Options
         return $new_input;
     }
     public function sanitize_general_settings($input){
-        die(var_dump($input));
-        $selected_posts=array();
+
         
         if (isset($input['custom_posts'])) {
+            $selected_posts=array();
+
+            die(var_dump($input['custom_posts']));
+
             $selected_posts=$input['custom_posts'];
         }
         
@@ -187,7 +190,7 @@ class Options
 
         $post_types = get_post_types( $args, $output, $operator ); 
         var_dump($this->options['custom_posts']);
-        echo '<select id="custom_posts" name="slick_wp_plugin[custom_posts]" multiple>';
+        echo '<select id="custom_posts" name="slick_wp_plugin[custom_posts][]" multiple>';
         foreach ( $post_types as $post_type ) {
             
             $selected=in_array($this->options['custom_posts'],$post_type->name)?'selected':'';
