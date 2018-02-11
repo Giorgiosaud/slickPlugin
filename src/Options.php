@@ -169,12 +169,11 @@ class Options
         );
     }
     public function askForPosts(){
-        
-        printf(
-            '<input type="text" id="custom_posts" name="slick_wp_plugin[custom_posts]" value="%s" />',
-            isset($this->options['custom_posts']) ? esc_attr($this->options['custom_posts']) : ''
+printf(
+            '<input type="text" id="secret" name="slick_wp_plugin[secret]" value="%s" />',
+            isset($this->options['secret']) ? esc_attr($this->options['secret']) : ''
         );
-
+        
     }
     /**
      * Options page callback
