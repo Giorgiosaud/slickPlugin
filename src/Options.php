@@ -132,12 +132,13 @@ class Options
         return $new_input;
     }
     public function sanitize_general_settings($input){
+        die(var_dump($input));
         $selected_posts=array();
         
         if (isset($input['custom_posts'])) {
             $selected_posts=$input['custom_posts'];
         }
-        var_dump($selected_posts);
+        
         return $selected_posts;
     }
 
