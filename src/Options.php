@@ -131,6 +131,9 @@ class Options
 
         return $new_input;
     }
+    public function sanitize_general_settings(){
+        die(var_dump('expression'));
+    }
 
     /** 
      * Print the Section text
