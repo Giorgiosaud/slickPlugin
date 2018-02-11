@@ -30,7 +30,7 @@ class CMB2Fields extends Singleton{
 			'type'       => 'wysiwyg',
 			'options' => array(
 		  	  'wpautop' => true, // use wpautop?
-			  'textarea_name' => $editor_id, // set the textarea name to something different, square brackets [] can be used here
+			  'textarea_name' => '¡¡¡', // set the textarea name to something different, square brackets [] can be used here
 		      'textarea_rows' =>3, // rows="..."
 		      'tabindex' => '',
 		      'teeny' => false, // output the minimal editor config used in Press This
@@ -45,7 +45,7 @@ class CMB2Fields extends Singleton{
 			'type'       => 'wysiwyg',
 			'options' => array(
 		  	  'wpautop' => true, // use wpautop?
-			  'textarea_name' => $editor_id, // set the textarea name to something different, square brackets [] can be used here
+			  'textarea_name' => '¡ere¡', // set the textarea name to something different, square brackets [] can be used here
 		      'textarea_rows' =>2, // rows="..."
 		      'tabindex' => '',
 		      'teeny' => false, // output the minimal editor config used in Press This
