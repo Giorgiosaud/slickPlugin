@@ -131,15 +131,6 @@ class Options
 
         return $new_input;
     }
-    public function sanitize_general_settings($input){
-        $selected_posts=array();
-        
-        if (isset($input['custom_posts'])) {
-            $selected_posts=$input['custom_posts'];
-        }
-        die(var_dump($selected_posts));
-        return $selected_posts;
-    }
 
     /** 
      * Print the Section text
@@ -178,20 +169,7 @@ class Options
         );
     }
     public function askForPosts(){
-        $args = array(
-            'public'   => true
-        );
-        $output = 'objects'; // names or objects, note names is the default
-        $operator = 'and'; // 'and' or 'or'
-
-        $post_types = get_post_types( $args, $output, $operator ); 
-        var_dump($this->options['custom_posts']);
-        echo '<select name="slick_wp_plugin[custom_posts]" multiple>';
-        foreach ( $post_types as $post_type ) {
-            $selected=in_array($this->options['custom_posts'],$post_type->name)?'selected':'';
-        printf('<option value="%s" %s>%s</option>',$post_type->name,$selected,$post_type->name);
-        }
-        echo '</select>';
+        
         printf(
             '<input type="text" id="custom_posts" name="slick_wp_plugin[custom_posts]" value="%s" />',
             isset($this->options['custom_posts']) ? esc_attr($this->options['custom_posts']) : ''
@@ -217,6 +195,6 @@ class Options
                 ?>
             </form>
         </div>
-        <?php
+    <?php
     }
 }
