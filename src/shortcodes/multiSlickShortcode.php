@@ -189,8 +189,8 @@ class multiSlickShortcode extends Singleton{
 		while ($query->have_posts() ) : $query->the_post();
 			$post=array();
 			$post['title']=get_the_title();
-			$post['image']= wp_get_attachment_image( get_post_meta( get_the_ID(), 'image_carousel_id', 1 ), 'slick_wp_carousel' );
-			$post['short_description'] = get_post_meta( get_the_ID(), 'short_description', true );
+			$post['image']= wp_get_attachment_image( get_post_meta( get_the_ID(), SLICKWP_CMB2PREFIX.'image_carousel_id', 1 ), 'slick_wp_carousel' );
+			$post['short_description'] = get_post_meta( get_the_ID(), SLICKWP_CMB2PREFIX.'short_description', true );
 			$post['link']=get_permalink( get_the_ID() );
 
 			array_push($this->posts,$post);
