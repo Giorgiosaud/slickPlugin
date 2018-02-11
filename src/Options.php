@@ -143,8 +143,9 @@ class Options
     }
 
 
-    public function sanitize_general_settings(){
-        die(var_dump('expression'));
+    public function sanitize_general_settings($input){
+        var_dump('expression');
+        die(var_dump($input));
     }
 
     /** 
