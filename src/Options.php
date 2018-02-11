@@ -121,6 +121,7 @@ class Options
      */
     public function sanitize($input)
     {
+        var_dump('test sanitize');
         die(var_dump($input));
         $new_input = array();
         // if( isset( $input['id_number'] ) )
