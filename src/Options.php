@@ -121,6 +121,7 @@ class Options
      */
     public function sanitize($input)
     {
+        var_dump('test');
         $new_input = array();
         // if( isset( $input['id_number'] ) )
         //  $new_input['id_number'] = absint( $input['id_number'] );
