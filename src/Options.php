@@ -146,6 +146,12 @@ class Options
     public function sanitize_general_settings($input){
         var_dump('expression');
         die(var_dump($input));
+        $new_input = array();
+        if (isset($input['custom_posts'])) {
+            $new_input['custom_posts'] = sanitize_text_field($input['custom_posts']);
+        }
+
+        return $new_input;
     }
 
     /** 
@@ -173,7 +179,7 @@ class Options
 
         $post_types = get_post_types( $args, $output, $operator ); 
 
-        echo '<select name="slick_wp_plugin_general[custom_posts][]" multiple>';
+        echo '<select name="slick_wp_plugin_general[custom_posts][]" multiple="multiple">';
         foreach ( $post_types as $post_type ) {
             $selected=in_array($this->options['custom_posts'],$post_type->name)?'selected':'';
             var_dump($selected);
@@ -181,7 +187,7 @@ class Options
         }
         echo '</select>';
         printf(
-            '<input type="text" id="custom_posts" name="slick_wp_plugin_general[custom_posts]" value="%s" />',
+            '<div> %s </div>',
             isset($this->options['custom_posts']) ? esc_attr($this->options['custom_posts']) : ''
         );
 
