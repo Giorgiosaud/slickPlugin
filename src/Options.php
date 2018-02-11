@@ -94,6 +94,11 @@ class Options
             'slick_wp_plugin_webhook', //Page
             'slick_wp_plugin_webhook_settings' //Section
         );
+        register_setting(
+            'slick_wp_plugin_general_settings', // Option group
+            'slick_wp_plugin', // Option name
+            array( $this, 'sanitize_general_settings' ) // Sanitize
+        );
     }
 
     /**
