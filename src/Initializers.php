@@ -44,6 +44,7 @@ class Initializers extends Singleton
     {	
         ImageSizes::getInstance();
     	slickShortcode::getInstance();
+        multiSlickShortcode::getInstance();
     	StylesAndScripts::getInstance();
         CMB2Fields::getInstance();
     }
