@@ -77,7 +77,7 @@ class Options
     {
         register_setting(
             'slick_wp_plugin_webhhok_settings', // Option group
-            'slick_wp_plugin', // Option name
+            'slick_wp_plugin_webhook', // Option name
             array( $this, 'sanitize' ) // Sanitize
         );
 
