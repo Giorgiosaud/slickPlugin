@@ -170,8 +170,7 @@ class Options
     }
     public function askForPosts(){
         $args = array(
-            'public'   => true,
-            '_builtin' => false
+            'public'   => true
         );
         $output = 'names'; // names or objects, note names is the default
         $operator = 'and'; // 'and' or 'or'
