@@ -105,6 +105,13 @@ class Options
             array( $this, 'printSectionSlick' ), // Callback
             'slick_wp_plugin_general' // Page
         );
+        add_settings_field(
+            'custom_posts', //ID
+            __('Select Custom Post To Use','slick_wp_plugin'), //Title
+            array( $this, 'askForPosts' ), // callback
+            'slick_wp_plugin_general', //Page
+            'slick_wp_plugin_general_settings' //Section
+        );
     }
 
     /**
@@ -160,6 +167,13 @@ class Options
             '<input type="text" id="secret" name="slick_wp_plugin[secret]" value="%s" />',
             isset($this->options['secret']) ? esc_attr($this->options['secret']) : ''
         );
+    }
+    public function askForPosts(){
+        printf(
+            '<input type="text" id="custom_posts" name="slick_wp_plugin[custom_posts]" value="%s" />',
+            isset($this->options['custom_posts']) ? esc_attr($this->options['custom_posts']) : ''
+        );
+
     }
     /**
      * Options page callback
