@@ -90,7 +90,7 @@ class Options
         add_settings_field(
             'secret', //ID
             'Secret', //Title
-            array( $this, 'passCallback' ), // callback
+            array( $this, 'webhookCallback' ), // callback
             'slick_wp_plugin_webhook', //Page
             'slick_wp_plugin_webhook_settings' //Section
         );
@@ -133,6 +133,18 @@ class Options
 
         return $new_input;
     }
+
+
+
+    public function webhookCallback()
+    {
+        printf(
+            '<input type="text" id="secret" name="slick_wp_plugin_webhook[secret]" value="%s" />',
+            isset($this->options['secret']) ? esc_attr($this->options['secret']) : ''
+        );
+    }
+
+    
     public function sanitize_general_settings(){
         die(var_dump('expression'));
     }
@@ -166,13 +178,7 @@ class Options
     /**
      * Get the settings option array and print one of its values
      */
-    public function passCallback()
-    {
-        printf(
-            '<input type="text" id="secret" name="slick_wp_plugin[secret]" value="%s" />',
-            isset($this->options['secret']) ? esc_attr($this->options['secret']) : ''
-        );
-    }
+    
     public function askForPosts(){
         $args = array(
             'public'   => true
