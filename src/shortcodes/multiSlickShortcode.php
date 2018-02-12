@@ -25,30 +25,6 @@ class multiSlickShortcode extends Singleton{
 		return $this->view;
 	}
 	protected function prepareView($id,$cat){
-		$html="<div class='carousel $cat'  id='$id'>";
-		foreach ($this->posts as $post) {
-			$html.='<div class="carousel_slide">';
-				$html.='<div class="carousel_container">';
-						$html.='<div class="carousel_image">';
-							$html.=$post['image'];
-						$html.='</div>';
-						$html.='<div class="carousel_text">';
-							$html.='<div class="carousel_title">';
-								$html.=$post['big_title'];
-							$html.='</div>';
-							$html.='<div class="carousel_subTitle">';
-								$html.=$post['short_description'];
-							$html.='</div>';
-						$html.='</div>';
-				$html.='</div>';
-				$ref=$post['link'];
-				$html.="<a class='button_carousel' href='$ref' target='_self'><span class='fusion-button-text'>Ver más</span></a>";
-			$html.='</div>';
-
-		}
-		$html.='</div>';
-		$html.='<script >';
-		$html.='jQuery(document).ready(function($) {';
 		$args=array(
 			'centerMode'=>true,
 			'centerPadding'=>'0',
@@ -75,7 +51,32 @@ class multiSlickShortcode extends Singleton{
 					)
 			)
 		));
-		var_dump(json_encode($args));
+		return json_encode($args);
+		$html="<div class='carousel $cat'  id='$id'>";
+		foreach ($this->posts as $post) {
+			$html.='<div class="carousel_slide">';
+				$html.='<div class="carousel_container">';
+						$html.='<div class="carousel_image">';
+							$html.=$post['image'];
+						$html.='</div>';
+						$html.='<div class="carousel_text">';
+							$html.='<div class="carousel_title">';
+								$html.=$post['big_title'];
+							$html.='</div>';
+							$html.='<div class="carousel_subTitle">';
+								$html.=$post['short_description'];
+							$html.='</div>';
+						$html.='</div>';
+				$html.='</div>';
+				$ref=$post['link'];
+				$html.="<a class='button_carousel' href='$ref' target='_self'><span class='fusion-button-text'>Ver más</span></a>";
+			$html.='</div>';
+
+		}
+		$html.='</div>';
+		$html.='<script >';
+		$html.='jQuery(document).ready(function($) {';
+
 		$html.="$('#$id').slick({ centerMode:true,centerPadding:'0',infinite:true,dots:false,prevArrow:\"<button type='button' class='slickwp-prev'>Previous</button>\",nextArrow:\"<button type='button' class='slickwp-next'>Next</button>\",speed: 300,slidesToShow: 3,slidesToScroll: 1,  responsive: [{breakpoint: 600,settings: {slidesToShow: 2,slidesToScroll: 1}},{breakpoint: 480,settings: {slidesToShow: 1,slidesToScroll: 1}}] });";
 	
 		$html.='});';
