@@ -9,19 +9,6 @@ class multiSlickShortcode extends Singleton{
 		$numbers=0;
 		add_shortcode('multislickwp',array($this,'execute'));
 	}
-	final public static function getInstance()
-    {
-
-        static $instance = null;
-
-        if (null === $instance)
-        {
-            $instance = new static();
-        }
-
-        return $instance;
-    }
-    
 	public function execute($atts){
 		
 		$atts = shortcode_atts(
