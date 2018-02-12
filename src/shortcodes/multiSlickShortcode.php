@@ -49,10 +49,8 @@ class multiSlickShortcode extends Singleton{
 		}
 		$html.='</div>';
 		$args=array(
-			'centerMode'=>true,
-			'centerPadding'=>'10px',
 			'infinite'=>true,
-			'dots'=>false,
+			'dots'=>true,
 			'prevArrow'=>"<button type='button' class='slickwp-prev'>Previous</button>",
 			'nextArrow'=>"<button type='button' class='slickwp-next'>Next</button>",
 			'speed'=> 300,
@@ -60,14 +58,14 @@ class multiSlickShortcode extends Singleton{
 			'slidesToScroll'=> 1,
 			'responsive'=> array(
 				array( 
-					'breakpoint'=> 600,
+					'breakpoint'=> 1200,
 					'settings'=> array(
 						'slidesToShow'=> 2,
 						'slidesToScroll'=> 1
 				),
 			),
 				array(
-					'breakpoint'=> 480,
+					'breakpoint'=> 600,
 					'settings'=> array(
 						'slidesToShow'=> 1,
 						'slidesToScroll'=> 1

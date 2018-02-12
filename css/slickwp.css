@@ -26,11 +26,11 @@
 }
 /* the slides */
 .slick-slide {
-    margin: 0 10px;
+    margin: 0 8px;
 }
 /* the parent */
 .slick-list {
-    margin: 0 -10px;
+    margin: 0 -8px;
 }
 .carousel_slide {
     text-align: center;
