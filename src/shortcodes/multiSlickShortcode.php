@@ -17,7 +17,7 @@ class multiSlickShortcode extends Singleton{
 				'post_type' => 'paquetes',
 				'category' => 'activo',
 				'qty'=>'10',
-				'id'=>'multislick'
+				'id'=>'multislick'.$numbers
 			), $atts, 'slickwp' );
 		$this->getPosts($atts);
 		$this->prepareView($atts['id'],$atts['category']);
