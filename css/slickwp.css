@@ -27,8 +27,6 @@
 
 .carousel_slide {
     text-align: center;
-}
-.carousel_slide:not(:first-child){
     padding-left:1rem;
 }
 a.button_carousel {
