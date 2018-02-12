@@ -50,7 +50,7 @@ class multiSlickShortcode extends Singleton{
 		$html.='</div>';
 		$args=array(
 			'infinite'=>true,
-			'dots'=>true,
+			'dots'=>false,
 			'prevArrow'=>"<button type='button' class='slickwp-prev'>Previous</button>",
 			'nextArrow'=>"<button type='button' class='slickwp-next'>Next</button>",
 			'speed'=> 300,
@@ -60,13 +60,15 @@ class multiSlickShortcode extends Singleton{
 				array( 
 					'breakpoint'=> 1200,
 					'settings'=> array(
+						'dots'=>true,
 						'slidesToShow'=> 2,
 						'slidesToScroll'=> 1
 				),
 			),
 				array(
-					'breakpoint'=> 600,
+					'breakpoint'=> 680,
 					'settings'=> array(
+						'dots'=>true,
 						'slidesToShow'=> 1,
 						'slidesToScroll'=> 1
 					)
