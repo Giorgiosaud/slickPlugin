@@ -10,14 +10,30 @@ class multiSlickShortcode extends Singleton{
 		$numbers=0;
 		add_shortcode('multislickwp',array($this,'execute'));
 	}
+	final public static function getInstance()
+    {
+
+        static $instance = null;
+
+        if (null === $instance)
+        {
+            $instance = new static();
+        }
+        $instance::increaseNumber();
+
+        return $instance;
+    }
+    public function increaseNumber(){
+		return $this->numbers++;
+    }
 	public function execute($atts){
-		$numbers++;
+		
 		$atts = shortcode_atts(
 			array(
 				'post_type' => 'paquetes',
 				'category' => 'activo',
 				'qty'=>'10',
-				'id'=>'multislick'.$numbers
+				'id'=>'multislick'.$this->numbers
 			), $atts, 'slickwp' );
 		$this->getPosts($atts);
 		$this->prepareView($atts['id'],$atts['category']);
