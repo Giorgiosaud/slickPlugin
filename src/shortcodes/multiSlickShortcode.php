@@ -51,7 +51,9 @@ class multiSlickShortcode extends Singleton{
 					)
 			)
 		));
-		return json_encode($args);
+		$html='<div class="example"></div><script >';
+		$html.=json_encode($args);
+		$html.='</script>';
 		$html="<div class='carousel $cat'  id='$id'>";
 		foreach ($this->posts as $post) {
 			$html.='<div class="carousel_slide">';
