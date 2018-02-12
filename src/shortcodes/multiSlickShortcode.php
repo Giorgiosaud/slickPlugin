@@ -48,7 +48,7 @@ class multiSlickShortcode extends Singleton{
 		$html.='<script >';
 		$html.='jQuery(document).ready(function($) {';
 
-		$html.="$('#$id').slick({infinite:true,dots:false,prevArrow:\"<button type='button' class='slickwp-prev'>Previous</button>\",nextArrow:\"<button type='button' class='slickwp-next'>Next</button>\",speed: 300,slidesToShow: 3,slidesToScroll: 1,  responsive: [{breakpoint: 600,settings: {slidesToShow: 2,slidesToScroll: 1}},{breakpoint: 480,settings: {slidesToShow: 1,slidesToScroll: 1}}]});";
+		$html.="$('#$id').slick({ centerMode:true,centerPadding:'0',infinite:true,dots:false,prevArrow:\"<button type='button' class='slickwp-prev'>Previous</button>\",nextArrow:\"<button type='button' class='slickwp-next'>Next</button>\",speed: 300,slidesToShow: 3,slidesToScroll: 1,  responsive: [{breakpoint: 600,settings: {slidesToShow: 2,slidesToScroll: 1}},{breakpoint: 480,settings: {slidesToShow: 1,slidesToScroll: 1}}] });";
 	
 		$html.='});';
 		$html.='</script>';
