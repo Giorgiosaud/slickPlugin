@@ -4,17 +4,20 @@ use giorgiosaud\slickwp\Singleton;
 class multiSlickShortcode extends Singleton{
 	protected $posts=array();
 	protected $view;
+	protected $numbers;
 	public function __construct()
 	{
+		$numbers=0;
 		add_shortcode('multislickwp',array($this,'execute'));
 	}
 	public function execute($atts){
+		$numbers++;
 		$atts = shortcode_atts(
 			array(
 				'post_type' => 'paquetes',
 				'category' => 'activo',
 				'qty'=>'10',
-				'id'=>'identificador'
+				'id'=>'multislick'
 			), $atts, 'slickwp' );
 		$this->getPosts($atts);
 		$this->prepareView($atts['id'],$atts['category']);
