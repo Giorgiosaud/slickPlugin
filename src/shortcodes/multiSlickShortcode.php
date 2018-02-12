@@ -4,7 +4,6 @@ use giorgiosaud\slickwp\Singleton;
 class multiSlickShortcode extends Singleton{
 	protected $posts=array();
 	protected $view;
-	protected $numbers;
 	public function __construct()
 	{
 		$numbers=0;
@@ -19,13 +18,10 @@ class multiSlickShortcode extends Singleton{
         {
             $instance = new static();
         }
-        $instance::increaseNumber();
 
         return $instance;
     }
-    public function increaseNumber(){
-		return $this->numbers++;
-    }
+    
 	public function execute($atts){
 		
 		$atts = shortcode_atts(
@@ -33,7 +29,7 @@ class multiSlickShortcode extends Singleton{
 				'post_type' => 'paquetes',
 				'category' => 'activo',
 				'qty'=>'10',
-				'id'=>'multislick'.$this->numbers
+				'id'=>'multislick'
 			), $atts, 'slickwp' );
 		$this->getPosts($atts);
 		$this->prepareView($atts['id'],$atts['category']);
