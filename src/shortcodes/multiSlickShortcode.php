@@ -50,7 +50,7 @@ class multiSlickShortcode extends Singleton{
 		$html.='</div>';
 		$args=array(
 			'centerMode'=>true,
-			'centerPadding'=>'0',
+			
 			'infinite'=>true,
 			'dots'=>false,
 			'prevArrow'=>"<button type='button' class='slickwp-prev'>Previous</button>",
