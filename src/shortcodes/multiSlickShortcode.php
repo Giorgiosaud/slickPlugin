@@ -74,7 +74,7 @@ class multiSlickShortcode extends Singleton{
 					)
 			)
 		));
-		$slickArgs=json_encode($args);
+		$slickArgs=htmlentities(json_encode($args));
 		$html.='<script >';
 		$html.='jQuery(document).ready(function($) {';
 
