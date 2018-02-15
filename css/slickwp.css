@@ -1,7 +1,7 @@
 .carousel_container {
     position: relative;
     text-align: left;
-    transition: 1s all;
+    transition: 0.2s all;
 }
 .carousel_container:hover{
     filter:saturate(0.3);
