@@ -1,6 +1,10 @@
 .carousel_container {
     position: relative;
     text-align: left;
+    transition: 1s all;
+}
+.carousel_container:hover{
+    filter:saturate(0.3);
 }
 .carousel_text {
     position: absolute;
