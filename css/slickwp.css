@@ -19,6 +19,7 @@
 }
 .carousel_container:hover .carousel_text{
     color:#f2b600;
+    text-shadow: #0219a0 1px 1px 1px;
 }
 .carousel_subTitle {
     font-size: 0.8rem;
