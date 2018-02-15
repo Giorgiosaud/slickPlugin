@@ -25,8 +25,10 @@ class slickShortcode extends Singleton{
 	protected function prepareView($id,$cat){
 		$html="<div class='carousel $cat'  id='$id'>";
 		foreach ($this->posts as $post) {
+			$ref=$post['link'];
 			$html.='<div class="carousel_slide">';
 				$html.='<div class="carousel_container">';
+					$html.="<a href='$ref'>";
 						$html.='<div class="carousel_image">';
 							$html.=$post['image'];
 						$html.='</div>';
@@ -38,9 +40,8 @@ class slickShortcode extends Singleton{
 								$html.=$post['short_description'];
 							$html.='</div>';
 						$html.='</div>';
+					$html.='</a>';
 				$html.='</div>';
-				$ref=$post['link'];
-				$html.="<a class='button_carousel' href='$ref' target='_self'><span class='fusion-button-text'>Ver más</span></a>";
 			$html.='</div>';
 
 		}
