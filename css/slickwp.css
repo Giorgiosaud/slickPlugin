@@ -3,9 +3,7 @@
     text-align: left;
     transition: 0.2s all;
 }
-.carousel_container:hover{
-    filter:saturate(0.3);
-}
+
 .carousel_text {
     position: absolute;
     bottom: 0;
@@ -14,7 +12,12 @@
     width: 100%;
     padding: 1rem;
 }
-
+.carousel_container:hover{
+    filter:saturate(0.3);
+}
+.carousel_container:hover .carousel_text{
+    color:#f2b600;
+}
 .carousel_subTitle {
     font-size: 0.8rem;
     font-weight: lighter;
