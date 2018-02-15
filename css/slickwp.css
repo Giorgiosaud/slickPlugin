@@ -31,6 +31,9 @@
     font-size: 2rem;
     
 }
+.carousel_title p{
+    margin-bottom: 0;
+}
 /* the slides */
 .slick-slide {
     margin: 0 8px;
