@@ -1,9 +1,11 @@
 .carousel_container {
     position: relative;
     text-align: left;
+    
+}
+.carousel_image,.carousel_text{
     transition: 0.2s all;
 }
-
 .carousel_text {
     position: absolute;
     bottom: 0;
@@ -12,7 +14,7 @@
     width: 100%;
     padding: 1rem;
 }
-.carousel_container:hover{
+.carousel_container:hover .carousel_image{
     filter:saturate(0.3);
 }
 .carousel_container:hover .carousel_text{
